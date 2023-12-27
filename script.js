@@ -13,8 +13,8 @@ let phrases = [
 
 
 function getRandomElement(arr) {
-  let randIndex = Math.floor(Math.random() * arr.length);
-  return arr[randIndex].text;
+	let randIndex = Math.floor(Math.random() * arr.length);
+  	return arr[randIndex];
 }
 
 let button = document.querySelector('.button');
@@ -23,8 +23,9 @@ let advice = document.querySelector('.advice');
 let image = document.querySelector('.image');
 
 button.addEventListener('click', function () {
-  let randomElement = getRandomElement(phrases);
-  phrase.textContent = randomElement;
+	let randomElement = getRandomElement(phrases);
+	phrase.textContent = randomElement.text;
+	image.src = randomElement.image;
 
   if (randomElement.length > 40) {
     advice.style.fontSize = '33px';
